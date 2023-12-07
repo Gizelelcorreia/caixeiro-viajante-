@@ -1,0 +1,80 @@
+#include <iostream>
+#include <fstream>
+#include <cstdlib>
+#include <string>
+#include <vector>
+#include <ctime>
+#include <list>
+#include <set>
+
+using namespace std;
+
+#include "Declaracoes.h"
+#include "BuscaLocal.h"
+#include "LeitorInstancia.h"
+#include "InsercaoMaisBarata.h"
+#include "vizinhanca.h"
+#include "Or-Opt2.h"
+#include "insert.h"
+#include "exportarRota.h"
+
+int main() {
+
+    string nomeInstancia = "berlin52.tsp";
+    vector<vector<double >> distance;
+    vector<Localidade> localidades;
+    lerDados(nomeInstancia,distance,localidades);
+    vector<int> rota;
+    double custo = 0;
+    int dimensao = localidades.size();
+    int tipo;
+
+    cout << "selecione o tipo de heuristica:" << endl;
+    cout << "(1)insercao\t(2)vizinhanca" << endl;
+    cin >> tipo;
+
+    switch (tipo){
+
+        case 1:
+            InsercaoMaisBarata(distance,dimensao,custo,rota);
+            break;
+        case 2:
+            vizinhoMaisProximo(distance,dimensao,custo,rota);
+            break;
+        default:
+            cout << "valor selecionado invalido" << endl;
+
+
+    }
+    cout << endl;
+
+    tipo = 0;
+    do{
+    cout << "\nAgora selecione o tipo de refinamento ou zero para sair:" << endl;
+    cout << "(1)troca\t(2)Or-Opt2\t(3)insert" << endl;
+    cin >> tipo;
+
+    switch (tipo){
+        case 0:
+            break;
+        case 1:
+          troca(custo,rota,distance);
+            break;
+        case 2:
+            moverDoisBlocos (custo, rota, distance);
+            break;
+        case 3:
+            inserir (custo, rota, distance);
+            break;
+        default:
+            cout << "valor selecionado invalido" << endl;
+      }
+    }while (tipo != 0);
+        cout << "\nfinalizado" << endl;
+
+    exportarRota (rota);
+    //getchar();
+
+    return 0;
+}
+

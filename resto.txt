@@ -1,0 +1,263 @@
+  /* cout << "\nAplicando busca local..." << endl;
+   bool melhorou = true;
+   while (melhorou) {
+
+        double novoCusto = 0;
+        double mCusto = 99999999;
+        int melhorL = -1;
+        int melhorK = -1;
+
+       for (int k = 1; k < rota.size() - 2; k ++){
+            for (int l = k+1; l < rota.size() - 1; l++){
+                if (l != k+1){
+                   novoCusto = custo - distance[rota[k-1]][rota[k]] - distance[rota[k]][rota[k+1]]
+                              - distance[rota[l-1]][rota[l]] - distance[rota[l]][rota[l+1]]
+                              + distance[rota[k-1]][rota[l]] + distance[rota[l]][rota[k+1]]
+                              + distance[rota[l-1]][rota[k]] + distance[rota[k]][rota[l+1]];
+
+                    if (novoCusto < mCusto){
+                        mCusto = novoCusto;
+                        melhorL = l;
+                        melhorK = k;
+                    }
+                } else {
+                   novoCusto = custo - distance[rota[k-1]][rota[k]]
+                              - distance[rota[l]][rota[l+1]]
+                              + distance[rota[k-1]][rota[l]]
+                              + distance[rota[k]][rota[l+1]];
+
+                    if (novoCusto < mCusto){
+                        mCusto = novoCusto;
+                        melhorL = l;
+                        melhorK = k;
+                    }
+                }
+            }
+        }
+
+        if (mCusto < custo) {
+            melhorou = true;
+            int vda = rota[melhorK];
+
+            rota[melhorK] = rota[melhorL];
+            rota [melhorL] = vda;
+            custo = mCusto;
+
+            cout << "\n\nnovo custo: " << custo << endl;
+            cout << "troca feita entre:" << rota[melhorL]
+                << " e " << rota[melhorK] << endl << endl;
+
+            for (vector <int>::iterator it = rota.begin(); it != rota.end(); it++ ){
+                cout << *it << "\t";
+            }
+        } else {
+            melhorou = false;
+
+        }
+   }
+    cout << endl;
+    cout << "aplicando insert..." << endl;
+*/
+    //insert
+    /*
+    bool melhoro = true;
+     while (melhoro) {
+
+         double custoDistance = 0;
+         double melhorCusto = 99999999;
+         int melhorEscolha = 0;
+         int melhorPos = 0;
+         int posK = 0;
+
+         for (int k = 1; k < rota.size()-1; k ++){//candidato
+             int rk = rota[k];
+             for (int l = 1; l < rota.size()-1; l++){//posi��o
+                 int rl = rota[l];
+                 if (k!=l && l!= k+1){
+
+                    custoDistance = custo - distance[rota[k-1]][rk] - distance[rk][rota[k+1]]
+                                     - distance[rota[l-1]][rl] + distance[rota[l-1]][rk]
+                                     + distance[rk][rl] + distance[rota[k-1]][rota[k+1]];
+
+                     if (custoDistance < melhorCusto){
+                         melhorCusto = custoDistance;
+                         melhorEscolha = rk;
+                         melhorPos = l;
+                         posK = k;
+                     }
+                 }
+             }
+         }
+
+         if (melhorCusto < custo) {
+
+             melhoro = true;
+             custo = melhorCusto;
+
+
+             cout << "\n\nnovo custo: " << custo << endl;
+             cout << "insert: " << rota[posK] << endl;
+             cout << "entre o " << rota[melhorPos-1] << " e o " << rota[melhorPos] << endl << endl;
+
+
+             rota.insert (rota.begin() + melhorPos, rota[posK]);
+
+             if (melhorPos > posK ){
+                 rota.erase(rota.begin() + posK);
+             }else {
+                 rota.erase(rota.begin() + posK+1);
+
+             }
+
+             for (vector <int>::iterator it = rota.begin(); it != rota.end(); it++ ){
+                 cout << *it << "\t";
+             }
+         } else {
+             melhoro = false;
+
+         }
+     }
+ */
+    /*
+    cout << endl;
+    cout << "\naplicando o Or-Opt2..." << endl;
+
+    bool melhor = true;
+    while (melhor) {
+
+        double custoDist = 0;
+        double melhorCust = 999999;
+        int segundoBloco = 0;
+        int primeiroBloco = 0;
+        int melhorPos;
+
+        for (int k = 1; k < rota.size() - 2; k++) {//candidato
+
+            for (int l = 1; l < rota.size() - 1; l++) {//posi��o
+
+                if (k != l) {
+
+                    custoDist = custo - distance[rota[k - 1]][rota[k]] - distance[rota[k + 1]][rota[k + 2]]
+                                - distance[rota[l - 1]][rota[l]] + distance[rota[k - 1]][rota[k + 2]]
+                                + distance[rota[l - 1]][rota[k]] + distance[rota[k + 1]][rota[l]];
+
+
+                    if (custoDist < melhorCust) {
+                        melhorCust = custoDist;
+                        primeiroBloco = k;
+                        segundoBloco = k + 1;
+                        melhorPos = l;
+
+                    }
+                } else {
+                    break;
+                }
+
+            }
+        }
+
+        if (melhorCust < custo) {
+
+            melhor = true;
+            custo = melhorCust;
+
+            cout << "\n\nnovo custo: " << custo << endl;
+            cout << "Or-Opt2 de: " << rota[primeiroBloco] << " e " << rota[segundoBloco] << endl;
+            cout << "entre o " << rota[melhorPos - 1] << " e o " << rota[melhorPos] << endl << endl;
+
+            rota.insert(rota.begin() + melhorPos, rota[primeiroBloco]);
+            rota.insert(rota.begin() + melhorPos + 1, rota[primeiroBloco + 2]);
+
+            if (melhorPos > primeiroBloco) {
+                rota.erase(rota.begin() + primeiroBloco);
+                rota.erase(rota.begin() + primeiroBloco);
+            } else {
+                rota.erase(rota.begin() + primeiroBloco + 2);
+                rota.erase(rota.begin() + primeiroBloco + 2);
+            }
+
+            for (vector<int>::iterator it = rota.begin(); it != rota.end(); it++) {
+                cout << *it << "\t";
+            }
+
+        } else {
+            melhor = false;
+
+        }
+    }
+    */
+
+    cout << endl;
+    cout << "\naplicando o Or-Opt3..." << endl;
+
+
+    bool refinamento = true;
+
+    while (refinamento) {
+        double custoDis = 0;
+        double melhorC = 99999;
+        int segBloco = 0;
+        int priBloco = 0;
+        int terBloco = 0;
+        int posMelhor;
+
+        for (int k = 1; k < rota.size() - 3; k++) {//candidato
+
+            for (int l = 1; l < rota.size() - 1; l++) {//posicao
+
+                if (k != l && k + 1 != l && k + 1 != l - 1 && l - 1 != k && l != k + 2) {
+
+                    custoDis = custo - distance[rota[k - 2]][rota[k - 1]] - distance[rota[k + 1]][rota[k + 2]]
+                               - distance[rota[l - 1]][rota[l]] + distance[rota[k - 2]][rota[k + 2]]
+                               + distance[rota[l - 1]][rota[k - 1]] + distance[rota[k + 1]][rota[l]];
+
+
+                    if (custoDis < melhorC) {
+                        melhorC = custoDis;
+                        priBloco = k;
+                        segBloco = k + 1;
+                        terBloco = k + 2;
+                        posMelhor = l;
+                    }
+                } else {
+                    break;
+                }
+
+            }
+        }
+        if (melhorC < custo) {
+
+            refinamento = true;
+            custo = melhorC;
+            melhorC = 0;
+
+            cout << "\n\nnovo custo: " << custo << endl;
+            cout << "Or-Opt3 de: |" << rota[priBloco] << "|" << rota[segBloco] << "|" << rota[terBloco] << "|" << endl;
+            cout << "entre o " << rota[posMelhor - 1] << " e o " << rota[posMelhor] << endl << endl;
+
+            rota.insert(rota.begin() + posMelhor, rota[priBloco]);
+            rota.insert(rota.begin() + posMelhor + 1, rota[priBloco + 2]);
+            rota.insert(rota.begin() + posMelhor + 2, rota[priBloco + 4]);
+
+            if (posMelhor > priBloco) {
+                rota.erase(rota.begin() + priBloco);
+                rota.erase(rota.begin() + priBloco);
+                rota.erase(rota.begin() + priBloco);
+            } else {
+                rota.erase(rota.begin() + priBloco + 3);
+                rota.erase(rota.begin() + priBloco + 3);
+                rota.erase(rota.begin() + priBloco + 3);
+            }
+
+            for (vector<int>::iterator it = rota.begin(); it != rota.end(); it++) {
+                cout << *it << "\t";
+            }
+
+            getchar();
+
+
+        } else {
+            refinamento = false;
+
+        }
+    }

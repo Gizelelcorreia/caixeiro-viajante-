@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="IMB" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/IMB" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/IMB" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="2Opt.cpp" />
+		<Unit filename="2Opt.h" />
+		<Unit filename="BuscaLocal.cpp" />
+		<Unit filename="BuscaLocal.h" />
+		<Unit filename="Declaracoes.cpp" />
+		<Unit filename="Declaracoes.h" />
+		<Unit filename="InsercaoMaisBarata.cpp" />
+		<Unit filename="InsercaoMaisBarata.h" />
+		<Unit filename="LeitorInstancia.cpp" />
+		<Unit filename="LeitorInstancia.h" />
+		<Unit filename="Or-Opt2.cpp" />
+		<Unit filename="Or-Opt2.h" />
+		<Unit filename="Or-Opt3.cpp" />
+		<Unit filename="Or-Opt3.h" />
+		<Unit filename="exportarRota.cpp" />
+		<Unit filename="exportarRota.h" />
+		<Unit filename="insert.cpp" />
+		<Unit filename="insert.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="perturbacao.cpp" />
+		<Unit filename="perturbacao.h" />
+		<Unit filename="refinamento.cpp" />
+		<Unit filename="refinamento.h" />
+		<Unit filename="twoBrid.cpp" />
+		<Unit filename="twoBrid.h" />
+		<Unit filename="vizinhanca.cpp" />
+		<Unit filename="vizinhanca.h" />
+		<Extensions>
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

@@ -1,0 +1,317 @@
+# depslib dependency file v1.0
+1641587883 source:c:\users\rodri\desktop\bia\imb\main.cpp
+	<iostream>
+	<fstream>
+	<cstdlib>
+	<string>
+	<vector>
+	<cmath>
+	<ctime>
+	<list>
+	<set>
+
+1648154034 source:c:\users\gizele\desktop\bia (1)\imb\main.cpp
+	<iostream>
+	<fstream>
+	<cstdlib>
+	<string>
+	<vector>
+	<ctime>
+	<list>
+	<set>
+	"Declaracoes.h"
+	"LeitorInstancia.h"
+	"InsercaoMaisBarata.h"
+	"vizinhanca.h"
+	"exportarRota.h"
+	"refinamento.h"
+	"perturbacao.h"
+	"2Opt.h"
+	"twoBrid.h"
+
+1643924387 c:\users\gizele\desktop\bia (1)\imb\declaracoes.h
+
+1643924624 source:c:\users\gizele\desktop\bia (1)\imb\declaracoes.cpp
+	<cmath>
+	"declaracoes.h"
+
+1644370956 source:c:\users\gizele\desktop\bia (1)\imb\buscalocal.cpp
+	<iostream>
+	<vector>
+	"BuscaLocal.h"
+
+1643923888 c:\users\gizele\desktop\bia (1)\imb\buscalocal.h
+	<vector>
+
+1643926171 c:\users\gizele\desktop\bia (1)\imb\leitorinstancia.h
+	<iostream>
+	<fstream>
+	<string>
+	<vector>
+	"Declaracoes.h"
+
+1643926289 source:c:\users\gizele\desktop\bia (1)\imb\leitorinstancia.cpp
+	"LeitorInstancia.h"
+
+1648153380 source:c:\users\gizele\desktop\bia (1)\imb\insercaomaisbarata.cpp
+	<iostream>
+	<fstream>
+	<cstdlib>
+	<string>
+	<vector>
+	<ctime>
+	<list>
+	<set>
+	"InsercaoMaisBarata.h"
+
+1644353954 c:\users\gizele\desktop\bia (1)\imb\insercaomaisbarata.h
+
+1644353954 c:\users\gizele\desktop\bia (1)\imb\vizinhanca.h
+	<vector>
+	<list>
+
+1644355460 source:c:\users\gizele\desktop\bia (1)\imb\vizinhanca.cpp
+	<iostream>
+	<fstream>
+	<cstdlib>
+	<string>
+	<vector>
+	<cmath>
+	<list>
+	"vizinhanca.h"
+
+1645055568 source:c:\users\gizele\desktop\bia (1)\imb\or-opt2.cpp
+	<iostream>
+	<fstream>
+	<cstdlib>
+	<string>
+	<vector>
+	<ctime>
+	"Or-Opt2.h"
+
+1645130129 c:\users\gizele\desktop\bia (1)\imb\or-opt2.h
+
+1644513399 source:c:\users\gizele\desktop\bia (1)\imb\insert.cpp
+	<iostream>
+	<vector>
+	"insert.h"
+
+1644513399 c:\users\gizele\desktop\bia (1)\imb\insert.h
+	<vector>
+
+1644525678 source:c:\users\gizele\desktop\bia (1)\imb\exportarrota.cpp
+	<iostream>
+	<fstream>
+	"exportarRota.h"
+
+1644525392 c:\users\gizele\desktop\bia (1)\imb\exportarrota.h
+	<vector>
+
+1645055656 source:c:\users\gizele\desktop\bia (1)\imb\or-opt3.cpp
+	<iostream>
+	<fstream>
+	<cstdlib>
+	<string>
+	<vector>
+	<ctime>
+	"Or-Opt3.h"
+
+1645130152 c:\users\gizele\desktop\bia (1)\imb\or-opt3.h
+	<iostream>
+	<fstream>
+	<cstdlib>
+	<string>
+	<vector>
+	<ctime>
+
+1646443993 source:c:\users\gizele\desktop\bia (1)\imb\perturbacao.cpp
+	"perturbacao.h"
+
+1645502462 c:\users\gizele\desktop\bia (1)\imb\perturbacao.h
+	<iostream>
+	<fstream>
+	<cstdlib>
+	<string>
+	<vector>
+
+1648153694 source:c:\users\gizele\desktop\bia (1)\imb\refinamento.cpp
+	<random>
+	<algorithm>
+	"refinamento.h"
+	"BuscaLocal.h"
+	"Or-Opt2.h"
+	"Or-Opt3.h"
+	"insert.h"
+	"2Opt.h"
+
+1645497878 c:\users\gizele\desktop\bia (1)\imb\refinamento.h
+	<iostream>
+	<fstream>
+	<cstdlib>
+	<string>
+	<vector>
+
+1645505547 source:c:\users\gizele\desktop\bia (1)\imb\2opt.cpp
+	"2Opt.h"
+
+1645505060 c:\users\gizele\desktop\bia (1)\imb\2opt.h
+	<iostream>
+	<algorithm>
+	<vector>
+
+1648072699 source:c:\users\gizele\desktop\bia (1)\imb\twobrid.cpp
+	"twoBrid.h"
+
+1647659299 c:\users\gizele\desktop\bia (1)\imb\twobrid.h
+	<bits/stdc++.h>
+	<iostream>
+	<vector>
+	<set>
+
+1645505547 source:c:\users\gizele\desktop\bia (1)\heurística\imb\2opt.cpp
+	"2Opt.h"
+
+1645505060 c:\users\gizele\desktop\bia (1)\heurística\imb\2opt.h
+	<iostream>
+	<algorithm>
+	<vector>
+
+1644370956 source:c:\users\gizele\desktop\bia (1)\heurística\imb\buscalocal.cpp
+	<iostream>
+	<vector>
+	"BuscaLocal.h"
+
+1643923888 c:\users\gizele\desktop\bia (1)\heurística\imb\buscalocal.h
+	<vector>
+
+1643924624 source:c:\users\gizele\desktop\bia (1)\heurística\imb\declaracoes.cpp
+	<cmath>
+	"declaracoes.h"
+
+1643924387 c:\users\gizele\desktop\bia (1)\heurística\imb\declaracoes.h
+
+1644525678 source:c:\users\gizele\desktop\bia (1)\heurística\imb\exportarrota.cpp
+	<iostream>
+	<fstream>
+	"exportarRota.h"
+
+1644525392 c:\users\gizele\desktop\bia (1)\heurística\imb\exportarrota.h
+	<vector>
+
+1644513399 source:c:\users\gizele\desktop\bia (1)\heurística\imb\insert.cpp
+	<iostream>
+	<vector>
+	"insert.h"
+
+1644513399 c:\users\gizele\desktop\bia (1)\heurística\imb\insert.h
+	<vector>
+
+1643926289 source:c:\users\gizele\desktop\bia (1)\heurística\imb\leitorinstancia.cpp
+	"LeitorInstancia.h"
+
+1643926171 c:\users\gizele\desktop\bia (1)\heurística\imb\leitorinstancia.h
+	<iostream>
+	<fstream>
+	<string>
+	<vector>
+	"Declaracoes.h"
+
+1648154034 source:c:\users\gizele\desktop\bia (1)\heurística\imb\main.cpp
+	<iostream>
+	<fstream>
+	<cstdlib>
+	<string>
+	<vector>
+	<ctime>
+	<list>
+	<set>
+	"Declaracoes.h"
+	"LeitorInstancia.h"
+	"InsercaoMaisBarata.h"
+	"vizinhanca.h"
+	"exportarRota.h"
+	"refinamento.h"
+	"perturbacao.h"
+	"2Opt.h"
+	"twoBrid.h"
+
+1644353954 c:\users\gizele\desktop\bia (1)\heurística\imb\insercaomaisbarata.h
+
+1644353954 c:\users\gizele\desktop\bia (1)\heurística\imb\vizinhanca.h
+	<vector>
+	<list>
+
+1645497878 c:\users\gizele\desktop\bia (1)\heurística\imb\refinamento.h
+	<iostream>
+	<fstream>
+	<cstdlib>
+	<string>
+	<vector>
+
+1645502462 c:\users\gizele\desktop\bia (1)\heurística\imb\perturbacao.h
+	<iostream>
+	<fstream>
+	<cstdlib>
+	<string>
+	<vector>
+
+1647659299 c:\users\gizele\desktop\bia (1)\heurística\imb\twobrid.h
+	<bits/stdc++.h>
+	<iostream>
+	<vector>
+	<set>
+
+1645055568 source:c:\users\gizele\desktop\bia (1)\heurística\imb\or-opt2.cpp
+	<iostream>
+	<fstream>
+	<cstdlib>
+	<string>
+	<vector>
+	<ctime>
+	"Or-Opt2.h"
+
+1645130129 c:\users\gizele\desktop\bia (1)\heurística\imb\or-opt2.h
+
+1645055656 source:c:\users\gizele\desktop\bia (1)\heurística\imb\or-opt3.cpp
+	<iostream>
+	<fstream>
+	<cstdlib>
+	<string>
+	<vector>
+	<ctime>
+	"Or-Opt3.h"
+
+1645130152 c:\users\gizele\desktop\bia (1)\heurística\imb\or-opt3.h
+	<iostream>
+	<fstream>
+	<cstdlib>
+	<string>
+	<vector>
+	<ctime>
+
+1646443993 source:c:\users\gizele\desktop\bia (1)\heurística\imb\perturbacao.cpp
+	"perturbacao.h"
+
+1648153694 source:c:\users\gizele\desktop\bia (1)\heurística\imb\refinamento.cpp
+	<random>
+	<algorithm>
+	"refinamento.h"
+	"BuscaLocal.h"
+	"Or-Opt2.h"
+	"Or-Opt3.h"
+	"insert.h"
+	"2Opt.h"
+
+1648154253 source:c:\users\gizele\desktop\bia (1)\heurística\imb\twobrid.cpp
+	"twoBrid.h"
+
+1644355460 source:c:\users\gizele\desktop\bia (1)\heurística\imb\vizinhanca.cpp
+	<iostream>
+	<fstream>
+	<cstdlib>
+	<string>
+	<vector>
+	<cmath>
+	<list>
+	"vizinhanca.h"
+

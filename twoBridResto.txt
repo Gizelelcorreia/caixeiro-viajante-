@@ -1,0 +1,395 @@
+/* cout << endl;
+   cout << "\naplicando o 2_Opt..." << endl;
+
+    bool melhor = true;
+    while (melhor) {
+
+        double custoDist = 0;
+        double melhorCust = 999999;
+        int primeiraPos = 0;
+        int ultimaPos = 0;
+
+        for (int i = 1; i < rota.size() - 2; i++) {//primeiro
+
+            for (int j = i + 1; j < rota.size() - 1; j++) {//ultimo
+
+
+                    custoDist = custo - distance[rota[i - 1]][rota[i]] - distance[rota[j]][rota[j + 1]]
+                                + distance[rota[i - 1]][rota[j]] + distance[rota[i]][rota[j+1]];
+
+                    if (custoDist < melhorCust) {
+                        melhorCust = custoDist;
+                        primeiraPos = i;
+                        ultimaPos = j;
+
+                }
+            }
+        }
+
+        if (melhorCust < custo) {
+
+            melhor = true;
+            custo = melhorCust;
+
+            cout << "\n\nnovo custo: " << custo << endl;
+
+            cout << "primeira posicao: " << rota[primeiraPos] <<"\t colocacao: " << primeiraPos << endl;
+            cout << "ultima posicao: " << rota[ultimaPos] <<"\t colocacao: " << ultimaPos << endl;
+
+            reverse (rota.begin() + primeiraPos, rota.begin() + ultimaPos + 1);
+
+           for (vector<int>::iterator it = rota.begin(); it != rota.end(); it++) {
+                cout << *it << "\t";
+            }
+
+
+                cout << "\n\ncusto -------------------------------- " << custo << endl;
+                cout << "- distance[rota[i - 1]][rota[i]] --------- "<< - distance[rota[primeiraPos - 1]][rota[primeiraPos]] << endl;
+                cout << "- distance[rota[j]][rota[j + 1]] --------- " << - distance[rota[ultimaPos]][rota[ultimaPos + 1]] << endl;
+                cout << "+ distance[rota[i - 1]][rota[j]] --------- " << + distance[rota[primeiraPos - 1]][rota[ultimaPos]] << endl;
+                cout << "+ distance[rota[i]][rota[j+1]] ----------- " << + distance[rota[primeiraPos]][rota[ultimaPos+1]] << endl;
+                cout << "rota[i - 1] ------------------------------ " << rota[primeiraPos - 1] << endl;
+                cout << "rota[i] ---------------------------------- " << rota[primeiraPos] << endl;
+                cout << "rota[j] ---------------------------------- " << rota[ultimaPos] << endl;
+                cout << "rota[j + 1] ------------------------------ " << rota[ultimaPos + 1] << endl;
+                cout << "i ---------------------------------------- " << primeiraPos << endl;
+                cout << "i - 1 ------------------------------------ " << primeiraPos - 1 << endl;
+                cout << "j ---------------------------------------- " << ultimaPos << endl;
+                cout << "j + 1 ------------------------------------ " << ultimaPos + 1 << endl;
+                cout << "andou ------------------------------------ " << ultimaPos - primeiraPos << endl;
+
+
+        } else {
+            melhor = false;
+
+        }
+    }
+
+
+    cout << "\n\nperturbacao" << endl;
+
+
+      int pertub = 0;
+      srand(1);
+      int posUm,posDois;
+
+     while (pertub < 4) {
+         posUm = rand() % dimensao;
+         posDois = rand() % dimensao;
+
+        if (posUm == posDois){
+            continue;
+        }
+
+        pertub++;
+    }
+       if (posDois != posUm + 1){
+            custo = custo - distance[rota[posUm -1]][rota[posUm]] - distance[rota[posUm]][rota[posUm+1]]
+                      - distance[rota[posDois-1]][rota[posDois]] - distance[rota[posDois]][rota[posDois+1]]
+                      + distance[rota[posUm-1]][rota[posDois]] + distance[rota[posDois]][rota[posUm+1]]
+                      + distance[rota[posDois-1]][rota[posUm]] + distance[rota[posUm]][rota[posDois+1]];
+
+              }else {
+                   custo = custo - distance[rota[posUm-1]][rota[posUm]]
+                              - distance[rota[posDois]][rota[posDois+1]]
+                              + distance[rota[posUm-1]][rota[posDois]]
+                              + distance[rota[posUm]][rota[posDois+1]];
+              }
+    int vda = rota[posUm];
+
+    rota[posUm] = rota[posDois];
+    rota [posDois] = vda;
+
+    cout << "\nnovo custo:" << custo << endl;
+
+     for (vector<int>::iterator it = rota.begin(); it != rota.end(); it++) {
+            cout << *it << "\t";
+
+        }*/
+
+    cout "\n\n\n";
+    
+     for (int i : inicio){
+        cout << i << endl;
+     }
+
+
+
+
+
+
+
+
+=====================================================================================================
+
+
+
+
+
+
+
+
+    while (numerosIni.size() != 4) {
+        int num = rand() % dimensao;
+        numerosIni.insert(num);
+    }
+
+    while (numerosFim.size() != 4) {
+        int num = rand() % dimensao;
+        numerosFim.insert(num);
+    }
+
+    for (int i : numerosIni){
+        inicio.insert(inicio.begin() + tam,i);
+        tam++;
+    }
+    tam = 0;
+    for (int i : numerosFim){
+        fim.insert(fim.begin() + tam,i);
+        tam++;
+    }
+      for (vector <int>::iterator it = inicio.begin(); it != inicio.end(); it++ ){
+
+            cout << *it << "\t";
+      }
+      cout << endl;
+      for (vector <int>::iterator it = fim.begin(); it != fim.end(); it++ ){
+
+            cout << *it << "\t";
+        }
+
+=========================================================================================================================
+
+cout << "\nAplicando two brid..." << endl;
+
+    int tam = 0;
+    vector <int> inicio;
+    vector <int> fim;
+    set<int> numerosIni;
+     set<int> numerosFim;
+    int j,k,l,i;
+
+    srand(1);
+    //srand(time(NULL));
+
+    while (numerosIni.size() != 4) {
+        int num = rand() % dimensao;
+        numerosIni.insert(num);
+    }
+
+    while (numerosFim.size() != 4) {
+        int num = rand() % dimensao;
+        numerosFim.insert(num);
+    }
+
+    for (int i : numerosIni){
+        inicio.insert(inicio.begin() + tam,i);
+        tam++;
+    }
+    tam = 0;
+    for (int i : numerosFim){
+        fim.insert(fim.begin() + tam,i);
+        tam++;
+    }
+      for (vector <int>::iterator it = inicio.begin(); it != inicio.end(); it++ ){
+
+            cout << *it << "\t";
+      }
+      cout << endl;
+      for (vector <int>::iterator it = fim.begin(); it != fim.end(); it++ ){
+
+            cout << *it << "\t";
+        }
+    bool melhorou = true;
+    while(melhorou){
+      for (int i = 0; i < inicio.size(); i++){
+
+
+            for (int j = 0; j < fim.size(); j++){
+                if (inicio.at(i) == fim.at(j)){
+
+                       srand(0);
+                       fim.insert(fim.begin() + j,rand() % dimensao);
+                }else{
+                if (inicio.at(i) > fim.at(i)){
+
+                    int vda = fim[i];
+
+                    fim[i] = inicio[i];
+                    inicio[i] = vda;
+
+                }else{
+                    if (inicio.at(i)+1 == fim.at(j)){
+
+                       srand(0);
+                       fim.insert(fim.begin() + j,rand() % dimensao);
+
+                    }else{
+                        break;
+                     }
+                   }
+                }
+            }
+        }
+        break;
+    }
+    cout << "\n\n\n";
+      for (vector <int>::iterator it = inicio.begin(); it != inicio.end(); it++ ){
+
+            cout << *it << "\t";
+      }
+      cout << endl;
+      for (vector <int>::iterator it = fim.begin(); it != fim.end(); it++ ){
+
+            cout << *it << "\t";
+        }
+==================================================================================================================================
+
+
+    cout << "\nAplicando two brid..." << endl;
+
+    int tam = 0;
+    vector <int> num;
+    set<int> numeros;
+    int j,k,l,i;
+
+    srand(1);
+    //srand(time(NULL));
+
+    while (numeros.size() != 4) {
+        int num = rand() % dimensao;
+        numeros.insert(num);
+    }
+
+    for (int i : numeros){
+        //cout << i << endl;
+        num.insert(num.begin() + tam,i);
+        tam++;
+    }
+
+    j = num.at(0);
+    k = num.at(1);
+    l = num.at(2);
+    i = num.at(3);
+
+
+           custo = custo  - distance[rota[k]][rota[k-1]] - distance[rota[l]][rota[l-1]]
+                          - distance[rota[i]][rota[i-1]] - distance[rota[j]][rota[j-1]]
+                          + distance[rota[i]][rota[k-1]] + distance[rota[j-1]][rota[l]]
+                          + distance[rota[j]][rota[l-1]] + distance[rota[i-1]][rota[k]];
+
+            int vda = rota[i-1];
+            rota[i-1] = rota[k-1];
+            rota[k-1] = vda;
+
+            vda = rota[i];
+            rota[i] = rota[k];
+            rota[k] = vda;
+
+       cout << "\n" << rota[i-1] << " trocou com " << rota[k-1] << endl;
+       cout << " e " << rota[i] << " trocou com " << rota [k] << endl;
+       cout << "novo custo:" <<  custo << endl;
+
+       for (vector<int>::iterator it = rota.begin(); it != rota.end(); it++) {
+            cout << *it << "\t";
+
+     }
+
+================================================================================================
+
+  for (int l : posiFinal){
+
+
+        cout << l << "\t";
+
+    }
+
+    for (int l : posiInicial){
+
+
+        cout << l << "\t";
+
+    }
+
+rota.clear();
+
+       for (int i = 0; i < posiInicial.size(); i++){
+
+        rota.push_back (posiInicial[i]);
+
+    }
+
+
+       for (int i = 0; i < posl.size(); i++){
+
+        rota.push_back (posl[i]);
+
+    }
+
+       for (int i = 0; i < posK.size(); i++){
+
+        rota.push_back (posK[i]);
+
+    }
+
+
+       for (int i = 0; i < posJ.size(); i++){
+
+        rota.push_back (posJ[i]);
+
+    }
+
+
+       for (int i = 1; i < posiFinal.size(); i++){
+
+        rota.push_back (posiFinal[i]);
+
+    }
+=====================================================================================
+  rota.insert(rota.begin(),rota.begin () + rota[0], rota.begin () + rota[fim[0]]);//i
+    rota.insert(rota.begin()+ posiInicial.size(),rota.begin () + rota[fim[0]+1], rota.begin () + rota[fim[1]]);//j
+    rota.insert(rota.begin()+ posiInicial.size() + posJ.size(), rota.begin () + rota[fim[1]+1], rota.begin () + rota[fim[2]]);//k
+    rota.insert(rota.begin()+ posiInicial.size() + posJ.size() + posK.size(), rota.begin () + rota[fim[2]+1], rota.begin () + rota[fim[3]]);//l
+   ======================================================================================
+
+
+    rota.erase(rota.begin()+ posiInicial.size()+1, rota.begin () + fim[1]+1);
+
+    rota.insert(rota.begin()+ fim[0], rota.begin () + rota[fim[2]+1], rota.begin () + rota[fim[3]]);
+
+    //rota.erase(rota.begin()+ posiInicial.size() + posl.size() + posK.size(), rota.begin () + fim[3]); // remove o l
+
+    //rota.insert(rota.begin()+ posiInicial.size() + posl.size() + posK.size(),rota.begin () + rota[fim[0]+1], rota.begin () + rota[fim[1]] );//l
+       
++====================================================================================================================================================
+
+////////////////////////////////////////////////////////////////
+    vector <int> posK;
+
+    int numk = fim.at(1)+1;
+    int fimk = fim.at(2);
+
+     for (numk; numk < fimk; numk++){
+
+            posK.push_back (rota[numk]);
+
+     }
+
+
+///////////////////////////////////////////////////////////////
+     vector <int> posl;
+
+    int numl = fim.at(2)+1;
+    int fiml = fim.at(3);
+
+
+     for (numl; numl < fiml; numl++){
+
+            posl.push_back (rota[numl]);
+
+     }7
+
+
+
+
+        twoBri(custo,rota,distance,dimensao);
